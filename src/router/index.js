@@ -39,4 +39,4 @@ export default new Router({
       component: Blog
     }
   ]
-})
+} )

@@ -2,7 +2,7 @@
   <div >
     <table>
       <tr v-for="blog in blogs">
-        <td>{{blog.title }}</td>
+        <td @click='show_blog(blog.id)'>{{blog.title }}</td>
       </tr>
     </table>
   </div>
@@ -15,6 +15,12 @@ export default {
       title: '博客列表页',
       blogs: [
       ]
+    }
+  },
+  methods: {
+    show_blog: function(blog_id) {
+      console.info("blog_id:" + blog_id)
+      this.$router.push({name: 'Blog', query: {id: blog_id}})
     }
   },
   mounted() {

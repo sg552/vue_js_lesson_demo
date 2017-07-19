@@ -1,27 +1,31 @@
 <template>
-  <div class="hello">
-    <h1>{{ title }}</h1>
+  <div >
     <div>
-      标题： {{ book.title }}  <br/>
-      作者： {{ book.author}}  <br/>
+      <p> 标题： {{ blog.title }}  </p>
+      <p> 发布于： {{blog.created_at }}</p>
+      <div v-html='blog.body'>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
-      title: '图书详情页',
-      book: {
-          title: "毛泽东选集",
-          author: "毛主席"
-      }
+      blog: {}
     }
+  },
+  mounted() {
+    this.$http.get('api/interface/blogs/show?id='+this.$route.query.id).then((response) => {
+       console.info(response.body)
+       this.blog = response.body.result
+    }, (response) => {
+       console.error(response)
+    });
   }
 }
 </script>
 
-<style scoped>
+<style>
 </style>

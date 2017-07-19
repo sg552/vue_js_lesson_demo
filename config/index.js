@@ -31,8 +31,7 @@ module.exports = {
 
     proxyTable: {
       '/api': {
-        //target: 'http://ptbweb.siwei.me',
-        target: 'http://localhost:3000',
+        target: 'http://siwei.me',
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''

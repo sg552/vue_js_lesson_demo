@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hello from '@/components/Hello'
-import BookList from '@/components/BookList'
-import Book from '@/components/Book'
+
+import BlogList from '@/components/BlogList'
+import Blog from '@/components/Blog'
+
 import SayHi from '@/components/SayHi'
 import SayHiFromVariable from '@/components/SayHiFromVariable'
 
@@ -27,19 +29,14 @@ export default new Router({
       component: SayHiFromVariable
     },
     {
-      path: '/books',
-      name: 'Books',
-      component: BookList
+      path: '/blogs',
+      name: 'BlogList',
+      component: BlogList
     },
     {
-      path: '/book',
-      name: 'Book',
-      component: Book
-    },
-    {
-      path: '/book/new',
-      name: 'NewBook',
-      component: Book
+      path: '/blog',
+      name: 'Blog',
+      component: Blog
     }
   ]
 })

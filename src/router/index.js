@@ -9,6 +9,7 @@ import SayHi from '@/components/SayHi'
 import SayHiFromVariable from '@/components/SayHiFromVariable'
 
 import TwoWayBinding from '@/components/TwoWayBinding'
+import FormInput from '@/components/FormInput'
 
 Vue.use(Router)
 
@@ -45,6 +46,12 @@ export default new Router({
       path: '/two_way_binding',
       name: 'TwoWayBinding',
       component: TwoWayBinding
+    },
+
+    {
+      path: '/form_input',
+      name: 'FormInput',
+      component: FormInput
     }
   ]
 } )

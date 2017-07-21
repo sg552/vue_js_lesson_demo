@@ -10,6 +10,7 @@ import SayHiFromVariable from '@/components/SayHiFromVariable'
 
 import TwoWayBinding from '@/components/TwoWayBinding'
 import FormInput from '@/components/FormInput'
+import FormSubmit from '@/components/FormSubmit'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
       path: '/form_input',
       name: 'FormInput',
       component: FormInput
+    },
+    {
+      path: '/form_submit',
+      name: 'FormSubmit',
+      component: FormSubmit
     }
   ]
 } )

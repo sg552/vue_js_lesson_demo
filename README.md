@@ -1,21 +1,21 @@
-# test_vue_0613
+# Vue项目的演示
 
-> 演示使用
+本项目基于Webpack .
 
-## Build Setup
+本项目的文字版教程,见: http://github.com/sg552/happy_book_vuejs
 
-``` bash
-# install dependencies
-npm install
+## 安装方式:
 
-# serve with hot reload at localhost:8080
-npm run dev
+npm: 3.10.8 (npm > 3.0)
 
-# build for production with minification
-npm run build
+node: v6.9.1 (node > 6.0)
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+vue: 2.0+
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+具体见教程.
+
+
+## 运行
+
+$ npm run dev
+

@@ -8,6 +8,8 @@ import Blog from '@/components/Blog'
 import SayHi from '@/components/SayHi'
 import SayHiFromVariable from '@/components/SayHiFromVariable'
 
+import TwoWayBinding from '@/components/TwoWayBinding'
+
 Vue.use(Router)
 
 export default new Router({
@@ -37,6 +39,12 @@ export default new Router({
       path: '/blog',
       name: 'Blog',
       component: Blog
+    },
+
+    {
+      path: '/two_way_binding',
+      name: 'TwoWayBinding',
+      component: TwoWayBinding
     }
   ]
 } )

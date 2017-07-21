@@ -2,6 +2,11 @@
   <div >
     <table>
       <tr v-for="blog in blogs">
+        <td>
+          <router-link :to="{name: 'Blog', query: {id: blog.id}}">
+            {{blog.id}}
+          </router-link>
+        </td>
         <td @click='show_blog(blog.id)'>{{blog.title }}</td>
       </tr>
     </table>
@@ -10,7 +15,7 @@
 
 <script>
 export default {
-  data () {
+  data: function() {
     return {
       title: '博客列表页',
       blogs: [

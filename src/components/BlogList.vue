@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('api/interface/blogs/all').then((response) => {
+    this.$http.get('/api/interface/blogs/all').then((response) => {
        console.info(response.body)
        this.blogs = response.body.blogs
     }, (response) => {

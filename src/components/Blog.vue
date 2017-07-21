@@ -17,7 +17,7 @@ export default {
     }
   },
   mounted() {
-    this.$http.get('api/interface/blogs/show?id='+this.$route.query.id).then((response) => {
+    this.$http.get('/api/interface/blogs/show?id='+this.$route.query.id).then((response) => {
        console.info(response.body)
        this.blog = response.body.result
     }, (response) => {

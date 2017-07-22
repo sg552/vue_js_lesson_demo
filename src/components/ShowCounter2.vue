@@ -1,21 +1,21 @@
 <template>
   <div>
     <h1> 这个页面是 2号页面 </h1>
-    {{remaining_second}} <br/>
+    {{points}} <br/>
     <input type='button' @click='increase' value='点击增加1'/><br/>
     <router-link :to="{name: 'ShowCounter1'}">
-          倒计时页面1
+          计时页面1
     </router-link>
   </div>
 </template>
 
 <script>
 import store from '@/vuex/store'
-import { COUNT_DOWN } from '@/vuex/mutation_types'
+import { INCREASE } from '@/vuex/mutation_types'
 export default {
   computed: {
-    remaining_second() {
-      return store.getters.get_remaining_second
+    points() {
+      return store.getters.get_points
     }
   },
   store,
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     increase() {
-      store.commit(COUNT_DOWN, store.getters.get_remaining_second + 1)
+      store.commit(INCREASE, store.getters.get_points + 1)
     }
   }
 }

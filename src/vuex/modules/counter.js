@@ -1,8 +1,8 @@
-import { COUNT_DOWN } from '@/vuex/mutation_types'
+import { INCREASE } from '@/vuex/mutation_types'
 
 const state = {
   is_counting: false ,
-  remaining_second: 10
+  points: 10
 }
 
 const getters = {
@@ -11,14 +11,14 @@ const getters = {
     return state.is_counting
   },
 
-  get_remaining_second: state => {
-    return state.remaining_second
+  get_points: state => {
+    return state.points
   }
 }
 
 const mutations = {
-  [COUNT_DOWN](state, data){
-    state.remaining_second = data
+  [INCREASE](state, data){
+    state.points += 1
   }
 
 }

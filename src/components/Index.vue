@@ -37,6 +37,12 @@
       <li><router-link :to="{name: 'SayHiFromMixin'}">
           SayHiFromMixin
         </router-link>: Mixin的例子.</li>
+      <li>Vuex的例子: <router-link :to="{name: 'ShowCounter1'}">
+          倒计时页面1
+        </router-link></li>
+      <li><router-link :to="{name: 'ShowCounter2'}">
+          倒计时页面2
+        </router-link></li>
 
     </ul>
     <p>文字版教程在: <a href=https://github.com/sg552/happy_book_vuejs>https://github.com/sg552/happy_book_vuejs</a></p>

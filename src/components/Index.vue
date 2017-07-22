@@ -34,6 +34,10 @@
           Blog
         </router-link>
       </li>
+      <li><router-link :to="{name: 'SayHiFromMixin'}">
+          SayHiFromMixin
+        </router-link>: Mixin的例子.</li>
+
     </ul>
     <p>文字版教程在: <a href=https://github.com/sg552/happy_book_vuejs>https://github.com/sg552/happy_book_vuejs</a></p>
   </div>

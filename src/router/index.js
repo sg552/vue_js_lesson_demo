@@ -13,6 +13,8 @@ import TwoWayBinding from '@/components/TwoWayBinding'
 import FormInput from '@/components/FormInput'
 import FormSubmit from '@/components/FormSubmit'
 
+import SayHiFromMixin from '@/components/SayHiFromMixin'
+
 Vue.use(Router)
 
 export default new Router({
@@ -65,6 +67,11 @@ export default new Router({
       path: '/form_submit',
       name: 'FormSubmit',
       component: FormSubmit
+    },
+    {
+      path: '/say_hi_from_mixin',
+      name: 'SayHiFromMixin',
+      component: SayHiFromMixin
     }
   ]
 } )

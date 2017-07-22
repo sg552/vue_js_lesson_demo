@@ -13,9 +13,10 @@
 
 <script>
 import MyLogo from './Logo.vue'
+import CommonHi from '@/mixins/common_hi.js'
 
 export default {
-  data () {
+  data: function() {
     return {
       blog: {}
     }
@@ -27,10 +28,14 @@ export default {
     }, (response) => {
        console.error(response)
     });
+    alert(this.hi("jim"))
   },
   components: {
     MyLogo
-  }
+  },
+  mixins: [
+    CommonHi
+  ]
 }
 </script>
 

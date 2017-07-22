@@ -1,5 +1,7 @@
 <template>
   <div >
+    <my-logo title="博客详情页">
+    </my-logo>
     <div>
       <p> 标题： {{ blog.title }}  </p>
       <p> 发布于： {{blog.created_at }}</p>
@@ -10,6 +12,8 @@
 </template>
 
 <script>
+import MyLogo from './Logo.vue'
+
 export default {
   data () {
     return {
@@ -23,6 +27,9 @@ export default {
     }, (response) => {
        console.error(response)
     });
+  },
+  components: {
+    MyLogo
   }
 }
 </script>

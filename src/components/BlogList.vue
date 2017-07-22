@@ -1,5 +1,8 @@
 <template>
   <div >
+    <my-logo :title="title">
+    </my-logo>
+    <input type='button' @click='change_title' value='点击修改标题'/><br/>
     <table>
       <tr v-for="blog in blogs">
         <td>
@@ -14,6 +17,9 @@
 </template>
 
 <script>
+
+import MyLogo from '@/components/Logo'
+
 export default {
   data: function() {
     return {
@@ -26,6 +32,9 @@ export default {
     show_blog: function(blog_id) {
       console.info("blog_id:" + blog_id)
       this.$router.push({name: 'Blog', query: {id: blog_id}})
+    },
+    change_title: function(){
+      this.title = '好多文章啊(标题被代码修改过了)'
     }
   },
   mounted() {
@@ -35,6 +44,9 @@ export default {
     }, (response) => {
        console.error(response)
     });
+  },
+  components: {
+    MyLogo
   }
 
 }

@@ -1,52 +1,45 @@
 # -*- encoding : utf-8 -*-
 require 'capistrano-rbenv'
 load 'deploy/assets'
-SSH_USER = 'root'
-ssh_options[:port] = 35888
+SSH_USER = 'siwei'
+ssh_options[:port] = 22
 set :rake, "bundle exec rake"
-set :application, "queen_town_web"
-set :repository, "."
+set :application, "vue_demo"
+set :repository, "./dist"
 set :scm, :none
+# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 set :deploy_via, :copy
-server = "vuetest.siwei.tech"
+server = "vue_demo.siwei.me"
 
 role :web, server
-role :app, server
-role :db,  server, :primary => true
+role :app, server                          # This may be the same as your `Web` server
+role :db,  server, :primary => true # This is where Rails migrations will run
 role :db,  server
 
-set :deploy_to, "/opt/app/test_vue_0613"
-default_run_options[:pty] = true
-set :copy_exclude, [".git", "node_modules", "src"]
+set :deploy_to, "/opt/app/vue_demo.siwei.me"
 
-# change to your username
+set :copy_exclude, [".git", "node_modules", "src"]
+default_run_options[:pty] = true
+
 set :user, SSH_USER
 
 namespace :deploy do
-  task :start do
-    run "nginx"
-  end
-  task :stop do
-    run "nginx -s stop"
-  end
+
   task :restart, :roles => :app, :except => { :no_release => true } do
-    stop
-    sleep 2
-    start
-  end
-  task :db_migrate do
+    run "nginx -s reload"
   end
 
   namespace :assets do
     task :precompile do
-      puts "======= should run precompile"
-      #    puts "== please run == \n #{command} \n == manually after deploy is done"
+      puts "== 这个命令没有用，但是rails中每次都会执行，所以使用空语句覆盖它。"
       #run "bundle install"
       #run "cd #{release_path} && bundle exec rake RAILS_ENV=production RAILS_GROUPS=assets assets:precompile "
     end
+    task :symlink do
+      puts "== 这个命令没有用，但是rails中每次都会执行，所以使用空语句覆盖它。"
+    end
   end
 end
-
 
 desc "编译vuejs"
 task :build_vue do

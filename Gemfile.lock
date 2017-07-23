@@ -1,5 +1,5 @@
 GEM
-  remote: https://gems.ruby-china.org/
+  remote: https://ruby.taobao.org/
   specs:
     capistrano (2.12.0)
       highline
@@ -29,4 +29,4 @@ DEPENDENCIES
   capistrano-rbenv (= 1.0.1)
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
